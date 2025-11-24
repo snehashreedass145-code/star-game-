@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Starfall — by YourName</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="topbar">
+      <div class="title">
+        <h1>Starfall</h1>
+        <p class="subtitle">Collect stars. Dodge meteors. Beat your high score.</p>
+      </div>
+      <div class="controls">
+        <button id="muteBtn" class="btn small">🔊 Music</button>
+        <button id="fullscreenBtn" class="btn small">⛶ Fullscreen</button>
+      </div>
+    </header>
+
+    <section class="game-area">
+      <canvas id="gameCanvas" width="900" height="600" aria-label="Game canvas"></canvas>
+
+      <aside class="ui">
+        <div class="panel">
+          <div>Score</div>
+          <div id="score">0</div>
+        </div>
+        <div class="panel">
+          <div>High</div>
+          <div id="highscore">0</div>
+        </div>
+        <div class="panel small-info">Use ← → or touch to move. Press Space to pause.</div>
+      </aside>
+
+      <!-- Overlay screens -->
+      <div id="overlay" class="overlay visible">
+        <div class="overlay-card">
+          <h2>Starfall</h2>
+          <p class="lead">Collect falling stars. Avoid meteors.</p>
+          <button id="startBtn" class="btn large">Play</button>
+          <p class="muted small">Designed & built by YourName — good luck!</p>
+        </div>
+      </div>
+
+      <div id="gameOver" class="overlay">
+        <div class="overlay-card">
+          <h2>Game Over</h2>
+          <p class="lead">Score: <span id="finalScore">0</span></p>
+          <p class="muted">Highscore: <span id="finalHigh">0</span></p>
+          <button id="restartBtn" class="btn large">Play Again</button>
+          <button id="shareBtn" class="btn ghost">Copy play link</button>
+        </div>
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      <small>Assets: place your audio files in <code>assets/</code> — names listed in README.</small>
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
